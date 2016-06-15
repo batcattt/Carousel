@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播-Slidejs</title>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	text-decoration: none;
+	}
+
+	ul,ol{
+		list-style: none;
+	}
+
+	i{
+	   font-style: normal;
+	}
+
+	a{
+		color: inherit;
+	}
+
+	body{
+		font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+		color: #666;
+	    background: #fff;
+	    -webkit-font-smoothing: antialiased;
+	}
+
+	#art-list{
+		height: 529px;
+		width: 940px;
+		color: #fff;
+		position: relative;
+	}
+
+	#art-list .slidesjs-pagination{
+		position: absolute;
+		bottom: 10px;
+		left:0;
+		width: 100%;
+		z-index: 10;
+		text-align: center;
+	}
+
+	#art-list .slidesjs-pagination>li{
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		background: #3e3e3e;
+		opacity: .5;
+		border-radius: 50%;
+		display: inline-block;
+		text-align: center;
+		margin: 0 0.2em;
+	}
+
+	#art-list .slidesjs-pagination>li>a{
+		display: block;
+	    width: 20px;
+		height: 20px;
+		line-height: 20px;
+		background: #3e3e3e;
+		border-radius: 50%;
+	}
+
+	#art-list .slidesjs-pagination>li>a.active{
+		background: rgb(0,0,0);
+	}
+
+	.slidesjs-navigation{
+	        display:block;
+	        width:30px;
+	        height:30px;
+	        color:#fff;
+	        font-weight: bold;
+	        border-radius:50%;
+	        background-color:rgba(0,0,0,0.5);
+	        position:absolute;
+	        top:50%;
+	        margin-top:-15px;
+	        text-align: center;
+	        line-height:30px;
+	        cursor:pointer;
+	        z-index: 10;
+	    }
+	    .slidesjs-navigation:hover {
+	        background-color:rgba(0,0,0,1);
+	    }
+	    .slidesjs-previous {
+	        left: 10px;
+	    }
+	    .slidesjs-next {
+	        right: 10px;
+	    }
+
+	</style>
+</head>
+<body>
+<div id="art-list">
+	  <img src="images/1.jpg" alt="">
+	  <img src="images/2.jpg" alt="">
+	  <img src="images/3.jpg" alt="">
+	  <img src="images/4.jpg" alt="">
+	  <a class="slidesjs-previous slidesjs-navigation"> < </a>
+      <a class="slidesjs-next slidesjs-navigation"> > </a>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+<script src="http://apps.bdimg.com/libs/slidesjs/3.0/jquery.slides.min.js"></script>
+<script>
+ $(function(){
+	      $("#art-list").slidesjs({
+	        width: 940,
+	        height: 529,
+	        navigation: {
+			      active: false,
+			        // [boolean] Generates next and previous buttons.
+			        // You can set to false and use your own buttons.
+			        // User defined buttons must have the following:
+			        // previous button: class="slidesjs-previous slidesjs-navigation"
+			        // next button: class="slidesjs-next slidesjs-navigation"
+			      effect: "fade"
+			        // [string] Can be either "slide" or "fade".
+			},
+	        play: {
+		      active: false,
+		        // [boolean] Generate the play and stop buttons.
+		        // You cannot use your own buttons. Sorry.
+		      effect: "slide",
+		        // [string] Can be either "slide" or "fade".
+		      interval: 2000,
+		        // [number] Time spent on each slide in milliseconds.
+		      auto: true,
+		        // [boolean] Start playing the slideshow on load.
+		      swap: true,
+		        // [boolean] show/hide stop and play buttons
+		      pauseOnHover: true,
+		        // [boolean] pause a playing slideshow on hover
+		      restartDelay: 2500
+		        // [number] restart delay on inactive slideshow
+		    }
+          });
+       });
+</script>
+</body>
+</html>
